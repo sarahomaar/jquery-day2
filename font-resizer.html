@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Font Resizer</title>
+	<style type="text/css" >
+
+		.box{
+			width:100px;
+			height:100px;
+			background-color:black;
+			position: absolute;
+		}
+		button{
+			padding:10px 20px 10px 20px;
+					}
+					
+
+
+	</style>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- <script type="text/javascript" src="jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="font-resizer.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+  $("#increase").click(function(){
+$("p").animate({fontSize: "+=10px"});
+
+if ( $(".content").css ("font-Size") >= "35px" ){
+$(".content").stop()
+$(".error").html("you have reached the max value!");
+}
+  })
+ 
+  $("#decrease").click(function(){
+	
+	$("p").animate({fontSize: "-=10px"});
+	
+	
+	if ( $(".content").css ("font-Size") <= "5px" ){
+     $(".content").stop();
+	 $(".err2").show();
+
+$(".error").html("you have reached the min value!");
+
+}
+// $(".error").hide();
+  })
+		})
+		
+		</script>
+</head>
+<body>
+	<p class="content">Hello, Open Sourcians</p>
+	<button id="decrease"> - </button>
+	<button id="increase"> + </button>
+	<br>
+	<p class="error">
+		
+	</p>
+	
+</body>
+</html>
